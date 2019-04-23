@@ -7,10 +7,8 @@ import util
 import simpleadd
 
 
-# table = "monkeytype_call_traces"
-# dbFilename = "monkeytype.sqlite3"
-
 # TODO:
+# get_input_type
 # read_type
 # create_st
 # use * to pass in the given decorator
