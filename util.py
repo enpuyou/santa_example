@@ -10,7 +10,7 @@ import hypothesis.strategies as st
 # TODO: can it handle types like List[str]?
 
 table = "monkeytype_call_traces"
-dbFilename = "example/monkeytype.sqlite3"  # global for now
+dbFilename = "monkeytype.sqlite3"  # global for now
 
 
 def connect_database_query(query):
@@ -37,6 +37,7 @@ def get_output_type(function, module):
                 WHERE qualname == "{function}" and module == "{module}"'
         row = connect_database_query(query)
         dict_row = json.loads(row[0])  # convert the string into dictionary
+        # print(dict_row)
         # print(dict_row.keys())  # return the parameter
         types = dict_row["qualname"]
         return types  # return the parameter and its type in a dict type

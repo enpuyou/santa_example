@@ -3,12 +3,12 @@
 
 from hypothesis import given
 import hypothesis.strategies as st
-from src import util
-from termfrequency import simpleadd
+import util
+import simpleadd
 
 
-table = "monkeytype_call_traces"
-dbFilename = "example/tests/monkeytype.sqlite3"
+# table = "monkeytype_call_traces"
+# dbFilename = "monkeytype.sqlite3"
 
 # TODO:
 # read_type
@@ -16,9 +16,9 @@ dbFilename = "example/tests/monkeytype.sqlite3"
 # use * to pass in the given decorator
 # specify how many parameters needed in the test case like below
 
-type_add_output = util.get_output_type(
+type_add_output = util.get_input_type(
     function="add",
-    module="termfrequency.simpleadd",
+    module="simpleadd",
 )
 list_type = util.read_type(type_add_output)
 func_st = util.create_st(list_type)
